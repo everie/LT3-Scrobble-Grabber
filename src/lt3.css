@@ -1,0 +1,16 @@
+.inner-load {
+    -fx-background-color: #00FF00,
+    linear-gradient(to bottom, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+    -fx-padding: 5px;
+    -fx-background-radius: 8px;
+}
+
+.outer-load {
+    -fx-background-color: #009900,
+    linear-gradient(to bottom, #666666 0%,#303030 50%,#666666 100%);
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #000000;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
