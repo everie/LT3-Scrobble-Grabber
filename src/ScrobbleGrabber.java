@@ -197,7 +197,7 @@ public class ScrobbleGrabber
                 }
 
             } catch (IOException | JSONException e) {
-                System.out.println(e.getMessage());
+                //System.out.println(e.getMessage());
             } finally {
                 isRipping = false;
             }
