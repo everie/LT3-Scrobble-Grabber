@@ -9,12 +9,14 @@ public class Scrobble implements Serializable
     String track;
     String album;
     long date;
+    boolean loved;
 
-    public Scrobble(String _artist, String _track, String _album, long _date) {
+    public Scrobble(String _artist, String _track, String _album, long _date, boolean _loved) {
         this.artist = _artist;
         this.track = _track;
         this.album = _album;
         this.date = _date;
+        this.loved = _loved;
     }
 
     public String getArtist()
@@ -35,6 +37,10 @@ public class Scrobble implements Serializable
     public long getDate()
     {
         return date;
+    }
+
+    public boolean isLoved() {
+        return loved;
     }
 
     public String toString() {

@@ -38,7 +38,7 @@ public class JSON
 
     public List<Scrobble> readPage(int page, String user, Container c) throws IOException, JSONException {
         int readPage = c.getTotalPages() - page;
-        String input = apiToString("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + user + "&api_key=" + s.getApi() + "&format=json&limit=" + s.getLimit() + "&page=" + readPage);
+        String input = apiToString("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + user + "&api_key=" + s.getApi() + "&format=json&extended=1&limit=" + s.getLimit() + "&page=" + readPage);
 
         JSONObject obj = new JSONObject(input);
         JSONObject recent = obj.getJSONObject("recenttracks");
@@ -65,12 +65,19 @@ public class JSON
                 }
                 if (!isFirst)
                 {
-                    String artist = track.getJSONObject("artist").getString("#text");
+                    String artist = track.getJSONObject("artist").getString("name");
                     String name = track.getString("name");
                     String album = track.getJSONObject("album").getString("#text");
                     long date = track.getJSONObject("date").getLong("uts");
+                    int loveInt = track.getInt("loved");
+                    boolean loved;
+                    if (loveInt == 0) {
+                        loved = false;
+                    } else {
+                        loved = true;
+                    }
 
-                    scrobbles.add(new Scrobble(artist, name, album, date));
+                    scrobbles.add(new Scrobble(artist, name, album, date, loved));
                 }
             }
         }
