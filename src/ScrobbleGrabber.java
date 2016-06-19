@@ -143,7 +143,6 @@ public class ScrobbleGrabber
         innerLoadingBar.setPrefSize(s.getLoadWidth() * (pct / 100.0), s.getLoadHeight());
 
         setDone();
-        //System.out.println(pagesRead);
     }
 
     private void reader() {

@@ -5,11 +5,11 @@ import java.io.Serializable;
  */
 public class Scrobble implements Serializable
 {
-    String artist;
-    String track;
-    String album;
-    long date;
-    boolean loved;
+    private String artist;
+    private String track;
+    private String album;
+    private long date;
+    private boolean loved;
 
     public Scrobble(String _artist, String _track, String _album, long _date, boolean _loved) {
         this.artist = _artist;

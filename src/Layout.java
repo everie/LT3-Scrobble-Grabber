@@ -59,9 +59,6 @@ public class Layout extends Application
         {
             layout.setCenter(frontPane());
         } else {
-            //System.out.println(container.getUser());
-            //System.out.println(container.getTotalTracks());
-            //System.out.println(container.getTotalPages());
             scrobblePane();
         }
 
